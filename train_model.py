@@ -44,14 +44,10 @@ X_train, X_test, y_train, y_test = train_test_split(
     df["text_clean"], df["label"], test_size=0.2, random_state=42
 )
 
-training_data, testing_data = 0, 0
-
-from sklearn.feature_extraction.text import TfidfVectorizer
-
 # === TF-IDF векторизация ===
 vectorizer = TfidfVectorizer(max_features=5000)
-X_train_tfidf = vectorizer.fit_transform(training_data)
-X_test_tfidf = vectorizer.transform(testing_data)
+X_train_tfidf = vectorizer.fit_transform(X_train)
+X_test_tfidf = vectorizer.transform(X_test)
 
 # === Обучение модели ===
 model = LogisticRegression(max_iter=1000, class_weight='balanced', C=2.0)
