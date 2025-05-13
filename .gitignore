@@ -1,0 +1,11 @@
+.idea
+.venv
+venv
+model/*
+.DS_Store
+prepared_data/*
+raw_data/*
+.env
+static/*
+anon.session
+session.session
