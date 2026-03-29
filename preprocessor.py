@@ -4,12 +4,10 @@ import re
 import emoji
 from stop_words import get_stop_words
 
-# === Настройки ===
 RAW_DATA_FOLDER = "raw_data"
 OUTPUT_FOLDER = "prepared_data"
 os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 
-# === Предобработка текста ===
 russian_stopwords = set(get_stop_words("ru"))
 
 def preprocess(text):
@@ -38,12 +36,11 @@ def process_and_save(file_name):
         print(f"Обработанные данные сохранены в {output_file}")
     else:
         print("Файл уже содержит колонку 'text_clean'. Обработка не требуется.")
-        output_file = input_path  # не создаём новый файл
+        output_file = input_path
 
     return os.path.basename(output_file)
 
-# === Пример запуска ===
 if __name__ == "__main__":
-    input_filename = "20240513_channelname.csv"  # пример
+    input_filename = "20240513_channelname.csv"
     result_file = process_and_save(input_filename)
     print("Результирующий файл:", result_file)

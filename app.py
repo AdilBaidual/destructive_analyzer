@@ -20,7 +20,7 @@ HTML_TEMPLATE = """
     <form method="post">
         <label><input type="radio" name="mode" value="channel" checked> Последние N постов</label><br>
         Название канала: <input type="text" name="channel"><br>
-        Кол-во постов: <input type="number" name="count" min="1" max="100"><br><br>
+        Кол-во постов: <input type="number" name="count" min="1" max="1000"><br><br>
 
         <label><input type="radio" name="mode" value="post"> Один пост по ID</label><br>
         Название канала: <input type="text" name="single_channel"><br>
